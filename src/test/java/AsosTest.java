@@ -1,16 +1,20 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.assertEquals;
 
 
 public class AsosTest {
@@ -25,13 +29,7 @@ public class AsosTest {
         System.setProperty("webdriver.chrome.driver", path);
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(url);
-    }
-
-    @Test
-    public void successLoginTest() {
-        //Verify that user can login with existing credentials
         driver.findElement(By.xpath("//button[@data-testid='accountIcon']")).click();
 
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -42,25 +40,51 @@ public class AsosTest {
                 .sendKeys("qaautomationtestuser@gmail.com");
         driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("Thisistest");
         driver.findElement(By.xpath("//input[@id='signin']")).click();
-        driver.findElement(By.xpath("//button[@data-testid='accountIcon']")).click();
-        assertTrue(driver.findElement(By.xpath("//a[@data-testid='signout-link']")).isDisplayed());
-//        assertEquals(driver.findElement(By.xpath("//button[@data-testid='accountIcon']"))
-//                .getAttribute("icon"), "accountFilled");
     }
 
     @Test
     public void searchTest() {
         //Verify that search result equals search query
         String searchWord = "jeans";
+
         driver.findElement(By.xpath(".//*[@id='chrome-search']")).sendKeys(searchWord);
         driver.findElement(By.xpath("//button[@data-testid='search-button-inline']")).click();
         String searchResult = driver.findElement(By.xpath("//p[@class='NvorkQI']")).getText();
         assertTrue(searchResult.contains(searchWord));
     }
 
-    @AfterClass
-    public void closeUp() {
-        driver.quit();
+    @Test
+    public void addToFavoritesTest() {
+        //Verify that item was added to favorites
+        driver.findElement(By.xpath("//a[@data-testid='men-floor']")).click();
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver
+                .findElement(By.xpath("//button[@data-id='029c47b3-2111-43e9-9138-0d00ecf0b3db']"))).build().perform();
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.xpath("//a[contains(@href,'cid=27110&nlid=mw|new+in|new+products')]")));
+
+        driver.findElement(By.xpath
+                ("//a[contains(@href,'cid=27110&nlid=mw|new+in|new+products')]")).click();
+
+        List<WebElement> products = driver.findElements(By.xpath("//article[@data-auto-id='productTile']"));
+        Random random = new Random();
+        int index = random.nextInt(products.size());
+        WebElement randomProduct = products.get(index);
+        randomProduct.click();
+
+        driver.findElement(By.xpath("//div[@id='product-save']//div[@class='save-button']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.xpath("//a[@class='save-button-link active animate']//span[@class='heartSecondary']")));
+        driver.findElement(By.xpath("//a[@data-testid='savedItemsIcon']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='savedItems-count']")));
+        assertTrue(driver.findElement(By.xpath("//p[@class='savedItems-count']")).isDisplayed());
     }
+
+//    @AfterClass
+//    public void closeUp() {
+//        driver.quit();
+//    }
 }
 
