@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cfc54c2-d2e4-4596-bc39-3e55dc32d881" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/AsosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AsosTest.java" afterDir="false" />
     </list>
@@ -29,10 +28,12 @@
       <file leaf-file-name="AsosTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/AsosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+            <state relative-caret-position="550">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4534#4535#0" expanded="true" />
+                <element signature="e#4563#4564#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,7 +86,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,6 +121,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -142,7 +143,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.AsosTest.addToFavoritesTest">
+  <component name="RunManager" selected="TestNG.AsosTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -308,8 +309,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AsosTest.addToFavoritesTest" />
         <item itemvalue="TestNG.AsosTest" />
+        <item itemvalue="TestNG.AsosTest.addToFavoritesTest" />
         <item itemvalue="TestNG.AsosTest (5)" />
         <item itemvalue="TestNG.AsosTest (2)" />
         <item itemvalue="TestNG.AsosTest (1)" />
@@ -330,18 +331,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AsosTest_addToFavoritesTest - 2018.11.13 at 21h 59m 16s.xml">
-      <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AsosTest_addToFavoritesTest - 2018.11.13 at 22h 01m 46s.xml">
-      <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AsosTest_addToFavoritesTest - 2018.11.13 at 23h 15m 06s.xml">
-      <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AsosTest_addToFavoritesTest - 2018.11.13 at 23h 15m 35s.xml">
-      <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="AsosTest_addToFavoritesTest - 2018.11.13 at 23h 20m 45s.xml">
       <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
     </history-entry>
@@ -359,6 +348,18 @@
     </history-entry>
     <history-entry file="AsosTest_addToFavoritesTest - 2018.11.13 at 23h 43m 19s.xml">
       <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AsosTest_addToFavoritesTest - 2018.11.15 at 22h 10m 26s.xml">
+      <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AsosTest_addToFavoritesTest - 2018.11.15 at 22h 14m 25s.xml">
+      <configuration name="AsosTest.addToFavoritesTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AsosTest - 2018.11.15 at 22h 15m 39s.xml">
+      <configuration name="AsosTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AsosTest - 2018.11.15 at 22h 16m 38s.xml">
+      <configuration name="AsosTest" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -378,7 +379,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -406,10 +407,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/AsosTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4534#4535#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AsosTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4534#4535#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -427,6 +449,8 @@
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4534#4535#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -444,6 +468,8 @@
           <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4534#4535#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -457,10 +483,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/AsosTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        <state relative-caret-position="550">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4534#4535#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
           </folding>
         </state>
       </provider>

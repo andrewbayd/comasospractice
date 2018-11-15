@@ -55,7 +55,7 @@ public class AsosTest {
 
     @Test
     public void addToFavoritesTest() {
-        //Verify that item was added to favorites
+        //Open New In directory
         driver.findElement(By.xpath("//a[@data-testid='men-floor']")).click();
         Actions builder = new Actions(driver);
         builder.moveToElement(driver
@@ -68,23 +68,44 @@ public class AsosTest {
         driver.findElement(By.xpath
                 ("//a[contains(@href,'cid=27110&nlid=mw|new+in|new+products')]")).click();
 
+        //Add all products on page to list, select random item and open this item's page
         List<WebElement> products = driver.findElements(By.xpath("//article[@data-auto-id='productTile']"));
         Random random = new Random();
         int index = random.nextInt(products.size());
         WebElement randomProduct = products.get(index);
         randomProduct.click();
 
+        //Save selected product's title to a string variable
+        String selectedProductName = driver.findElement(By.xpath("//*[@id='aside-content']//h1")).getText();
+
+        //Add product to the favorites
         driver.findElement(By.xpath("//div[@id='product-save']//div[@class='save-button']")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated
                 (By.xpath("//a[@class='save-button-link active animate']//span[@class='heartSecondary']")));
+
+        //Navigate to favorites page and add all product titles to list
         driver.findElement(By.xpath("//a[@data-testid='savedItemsIcon']")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='savedItems-count']")));
-        assertTrue(driver.findElement(By.xpath("//p[@class='savedItems-count']")).isDisplayed());
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.xpath("//div[@data-test-selector='savedItemsHeader']")));
+
+        List<WebElement> favorites = driver.findElements(By.xpath("//a[contains(@data-bind,'tem.title')]"));
+
+        //Verify that our selected product is in favorites page
+        boolean isProductExist = false;
+
+        for (WebElement element: favorites) {
+            if (element.getText().equals(selectedProductName)) {
+                isProductExist = true;
+                break;
+            }
+        }
+
+        assertTrue(isProductExist);
     }
 
-//    @AfterClass
-//    public void closeUp() {
-//        driver.quit();
-//    }
+    @AfterClass
+    public void closeUp() {
+        driver.quit();
+    }
 }
 
