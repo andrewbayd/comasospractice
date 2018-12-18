@@ -1,7 +1,7 @@
 package Utils;
 
 import static Utils.Constants.SITE_URL;
-import static Utils.WrapperDriver.driver;
+import static Utils.WebDriverFactory.driver;
 
 public class Navigator {
 

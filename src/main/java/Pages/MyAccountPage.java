@@ -31,7 +31,7 @@ public class MyAccountPage extends BasePage {
 
     public void saveMyDetailsChanges() throws InterruptedException {
         waitForElementAndClick(saveChangesButton);
-        Thread.sleep(5000);
+        waitForSpinner();
     }
 
     public String getUserNameText() {

@@ -1,7 +1,7 @@
 package Pages;
 
 import Utils.Waiters;
-import Utils.WrapperDriver;
+import Utils.WebDriverFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -11,13 +11,13 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 import static Utils.Waiters.MEDIUM_DELAY;
-import static Utils.WrapperDriver.driver;
+import static Utils.WebDriverFactory.driver;
 
 public class BasePage extends PageFactory {
     private Waiters waiter = new Waiters();
 
     public BasePage() {
-        initElements(WrapperDriver.driver, this);
+        initElements(WebDriverFactory.driver, this);
     }
 
     void moveCursorToElement(WebElement element) {
@@ -76,6 +76,10 @@ public class BasePage extends PageFactory {
         input.sendKeys(text);
     }
 
+    void waitForSpinner() throws InterruptedException {
+        Thread.sleep(5000);
+    }
+
     boolean verifyThatElementIsDisplayed(WebElement element) {
         return element.isDisplayed();
     }
@@ -88,7 +92,4 @@ public class BasePage extends PageFactory {
             }
         }
     }
-
-
-
 }

@@ -22,7 +22,7 @@ public class WomenNewInAccessoriesPage extends BasePage {
     public void sortProductsByPriceAscending() throws InterruptedException {
         waitForElementAndClick(sortDropdown);
         waitForElementAndClick(sortByPriceAscOption);
-        Thread.sleep(1000);
+        waitForSpinner();
     }
 
     public List<String> getProductsPrices() {

@@ -1,9 +1,6 @@
 import Utils.Navigator;
 import Pages.*;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static Utils.Constants.*;
 import static org.assertj.core.api.Assertions.*;
@@ -26,7 +23,7 @@ public class AsosTest {
     private WomenNewInAccessoriesPage womenNewInAccessoriesPage = new WomenNewInAccessoriesPage();
 
 
-    @BeforeClass
+    @BeforeClass (description = "Opening the browser and logging in with valid credentials")
     public void setUp() {
         //Open app and login to account
         navigator.openApp();
@@ -34,20 +31,20 @@ public class AsosTest {
         loginPage.loginToAccount(USER_EMAIL, USER_PASSWORD);
     }
 
-    @BeforeMethod
+    @BeforeMethod (description = "Navigating to the main page before each test method")
     public void navigateToMainPage () {
         //Navigate to home page
         navigator.navigateToHomePage();
     }
 
-    @Test
+    @Test (description = "Valid search scenario")
     public void searchTest() {
         //Verify that search result equals search query
         header.search(SEARCH_WORD);
         assertThat(searchResultsPage.getSearchResultText()).contains(SEARCH_WORD);
     }
 
-    @Test
+    @Test (description = "Valid scenario with adding a product to favorites")
     public void addToFavoritesTest() {
         //Add random product to favorites and verify that product was added
         String selectedProductName;
@@ -63,7 +60,7 @@ public class AsosTest {
         assertTrue(favoritesPage.isPageEmpty());
     }
 
-    @Test
+    @Test (description = "Valid scenario with adding a product to the shopping cart")
     public void shoppingCartTest() {
         //Add random product to cart and verify that product was added
         String selectedProductName;
@@ -80,7 +77,7 @@ public class AsosTest {
         assertTrue(cartPage.isPageEmpty());
     }
 
-    @Test
+    @Test (description = "Valid scenario for testing sorting by price")
     public void priceSortTest() throws InterruptedException {
         //Sort products on page by prices ascending and compare list of prices to sorted list of prices
         header.openWomenCategoryMenu();
@@ -90,7 +87,7 @@ public class AsosTest {
                 .isEqualTo(womenNewInAccessoriesPage.getProductsPricesSorted());
     }
 
-    @Test
+    @Test(description = "Valid scenario with renaming user")
     public void renameUserTest () throws InterruptedException {
         //Rename user and verify that username was changed
         header.openMyAccountPage();
@@ -100,7 +97,7 @@ public class AsosTest {
         assertThat(myAccountPage.getUserNameText()).contains(NEW_USER_NAME);
     }
 
-    @AfterClass
+    @AfterClass (description = "Setting default username and closing the browser")
     public void closeUp() throws InterruptedException {
         //Rename user to default and close browser
         navigator.navigateToHomePage();

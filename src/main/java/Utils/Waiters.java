@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-import static Utils.WrapperDriver.driver;
+import static Utils.WebDriverFactory.driver;
 
 public class Waiters {
     public static final int SHORT_DELAY = 5;
